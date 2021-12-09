@@ -2,12 +2,50 @@
   
 <html>
     <head>
-        <title>
-              
-        </title>
-    </head>
-      
+        <title>Gemie Labs</title>
+        <style>
+            body {
+              margin: 0;
+            }
+
+            #page-wrapper {
+              display:  flex;
+              flex-direction: column;
+            }
+
+            @media only screen and (min-width: 768px) {
+              #page-wrapper {
+                flex-direction: row;
+              }
+
+              #page-aside {
+                flex-basis: 20rem;
+                height:  100vh;
+                position:  sticky;
+                top: 0;
+                overflow-y: auto;
+              }
+
+              #page-main {
+                flex-basis: 80rem;
+              }
+            }
+        </style>
+    </head> 
     <body>
-        <h1>  WELCOME TO GEMIE LABS! </h1>
+        <div id="page-wrapper">
+            <aside id="page-aside">
+                <header>
+                    <h1>GEMIE LABS</h1>
+                </header>
+                <!-- I am putting this so much line breaks so that the scroll effect on the aside can be seen -->
+                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+                <footer>
+                    This is the end of the aside
+                </footer>
+            </aside>
+            <main id="page-main">
+            </main>
+        </div>
     </body>
 </html>
