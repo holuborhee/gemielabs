@@ -1,53 +1,460 @@
 <!DOCTYPE html>
-  
+
 <html>
-    <head>
-        <title>Gemie Labs</title>
-        <style>
-            body {
-              margin: 0;
-            }
+  <head>
+    <title>Gemie Labs</title>
+    <style>
+      body {
+        margin: 0;
+      }
 
-            #page-wrapper {
-              display:  flex;
-              flex-direction: column;
-            }
+      #page-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
 
-            @media only screen and (min-width: 768px) {
-              #page-wrapper {
-                flex-direction: row;
-              }
+      @media only screen and (min-width: 768px) {
+        #page-wrapper {
+          flex-direction: row;
+        }
 
-              #page-aside {
-                background-color: #000000;
-                color: #FFFFFF; 
-                flex-basis: 20rem;
-                height:  100vh;
-                position:  sticky;
-                top: 0;
-                overflow-y: auto;
-              }
+        #page-aside {
+          background-color: #000000;
+          color: #ffffff;
+          flex-basis: 20rem;
+          height: 100vh;
+          position: sticky;
+          top: 0;
+          overflow-y: auto;
+        }
 
-              #page-main {
-                flex-basis: 80rem;
-              }
-            }
-        </style>
-    </head> 
-    <body>
-        <div id="page-wrapper">
-            <aside id="page-aside">
-                <header>
-                    <h1>GEMIE LABS</h1>
-                </header>
-                <!-- I am putting this so much line breaks so that the scroll effect on the aside can be seen -->
-                <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-                <footer>
-                    This is the end of the aside
-                </footer>
-            </aside>
-            <main id="page-main">
-            </main>
+        #page-main {
+          flex-basis: 80rem;
+          padding: 50px;
+          cursor: pointer;
+        }
+
+        .main-header {
+          border-bottom: 2px solid #f8f9fa;
+        }
+
+        #header-link:link,
+        #header-link:visited {
+          text-decoration: none;
+          color: #212529;
+        }
+
+        .header-span {
+          color: #6c757d;
+        }
+
+        /* #main-hr {
+          border-bottom: 0px;
+          border-top: 2px solid #f8f9fa;
+        } */
+
+        .video-tools-icon {
+          width: 12px;
+          height: 12px;
+        }
+        #video-tools {
+          margin-top: 18px;
+          background-color: #f8f9fa;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+
+        #video-tools ul {
+          list-style-type: none;
+        }
+
+        .video-tools-link:link,
+        .video-tools-link:visited {
+          text-decoration: none;
+          font-size: 1rem;
+          color: #6c757d;
+          padding: 12px;
+          border: 2px solid transparent;
+          border-radius: 8px;
+        }
+
+        .video-tools-link:hover,
+        .video-tools-link:active {
+          color: #212529;
+          border: 2px solid rgb(183, 233, 248);
+        }
+
+        .chapters-link:link,
+        .chapters-link:visited {
+          text-decoration: none;
+          font-size: 1rem;
+          color: #6c757d;
+        }
+
+        .chapters-link:hover,
+        .chapters-link:active {
+          color: #212529;
+        }
+
+        .video-tools-left,
+        .video-tools-right {
+          display: flex;
+          gap: 32px;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .video-tools-left {
+          margin-left: -20px;
+        }
+
+        .video-tools-right {
+          margin-right: 20px;
+        }
+
+        #video-info {
+          margin-top: 20px;
+          width: 30%;
+        }
+
+        #video-info ul li {
+          margin-top: 12px;
+          list-style-type: square;
+          font-size: 1.125rem;
+        }
+
+        .video-info-link {
+          text-decoration: none;
+        }
+
+        .video-info-link:link,
+        .video-info-link:visited {
+          color: #212529;
+        }
+
+        .video-info-link:hover,
+        .video-info-link:active {
+          color: #a51c30;
+        }
+
+        .dropdown-snacks,
+        .dropdown-chapters,
+        .dropdown-reusable {
+          display: none;
+        }
+
+        .snacks:hover .dropdown-snacks,
+        .chapters:hover .dropdown-chapters {
+          position: absolute;
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          background-color: #ffffff;
+        }
+
+        .dropdown-snacks li {
+          border-bottom: 1px solid #f8f9fa;
+        }
+        .snacks:hover .dropdown-snacks {
+          width: 70px;
+          padding: 0;
+          font-size: 2.3rem;
+          text-align: center;
+        }
+
+        .chapters:hover .dropdown-chapters {
+          width: 200px;
+          padding: 20px;
+          font-size: 1rem;
+          text-align: left;
+          right: 50px;
+          left: auto;
+          height: 460px;
+          overflow-y: scroll;
+        }
+
+        .lecture-list:hover .dropdown-reusable {
+          position: relative;
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page-wrapper">
+      <aside id="page-aside">
+        <header>
+          <h1>GEMIE LABS</h1>
+        </header>
+        <!-- I am putting this so much line breaks so that the scroll effect on the aside can be seen -->
+        <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+        <footer>This is the end of the aside</footer>
+      </aside>
+
+      <main id="page-main">
+        <header class="main-header">
+          <h1>
+            <a id="header-link" href="#"
+              >Week 1 <span class="header-span">Scratch</span></a
+            >
+          </h1>
+        </header>
+        <!-- <hr id="main-hr" /> -->
+        <section>
+          <div id="video-tools">
+            <ul class="video-tools-left">
+              <a
+                href="https://drive.google.com/file/d/1MXi7CLL6gQtFC1q-rSiSdCCs2FEFNGy1/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 1443.061 1249.993"
+                >
+                  <path
+                    fill="#3777e3"
+                    d="M240.525 1249.993l240.492-416.664h962.044l-240.514 416.664z"
+                  />
+                  <path
+                    fill="#ffcf63"
+                    d="M962.055 833.329h481.006L962.055 0H481.017z"
+                  />
+                  <path
+                    fill="#11a861"
+                    d="M0 833.329l240.525 416.664 481.006-833.328L481.017 0z"
+                  />
+                </svg>
+              </a>
+              <li><a class="video-tools-link" href="#">CS50</a></li>
+              <li><a class="video-tools-link" href="#">Scratch</a></li>
+            </ul>
+
+            <ul class="video-tools-right">
+              <li><a class="video-tools-link" href="#">Shortcuts</a></li>
+
+              <li class="snacks">
+                <a class="video-tools-link" href="#"
+                  >Snacks
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="video-tools-icon"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <ul class="dropdown-snacks">
+                  <li>🍔</li>
+                  <li>🍕</li>
+                  <li>🍿</li>
+                  <li>🍦</li>
+                  <li>🧃</li>
+                </ul>
+              </li>
+
+              <li class="chapters">
+                <a class="video-tools-link" href="#"
+                  >Chapters
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="video-tools-icon"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <ul class="dropdown-chapters">
+                  <li>
+                    <a class="chapters-link" href="#">Web definition</a>
+                  </li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Front end</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Conclusion</a></li>
+                  <li><a class="chapters-link" href="#">Assignment</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <iframe
+              src="https://drive.google.com/file/d/1MXi7CLL6gQtFC1q-rSiSdCCs2FEFNGy1/preview"
+              width="1000"
+              height="500"
+              allow="autoplay"
+              allowfullscreen="1"
+              frameborder="0"
+            ></iframe>
+          </div>
+        </section>
+
+        <div id="video-info">
+          <ul>
+            <li class="lecture-list">
+              Lecture
+              <ul class="dropdown-reusable">
+                <!-- <li>
+                  <a
+                    class="video-info-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Audio</a
+                  >
+                </li> -->
+                <li>
+                  <a
+                    class="video-info-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Notes</a
+                  >
+                </li>
+
+                <li class="lecture-list">
+                  Slides
+                  <ul class="dropdown-reusable">
+                    <li>
+                      <a
+                        class="video-info-link"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Google Slides</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="video-info-link"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >PDF</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+
+                <!-- <li class="lecture-list">
+                  Source Code
+                  <ul class="dropdown-reusable">
+                    <li>
+                      <a
+                        class="video-info-link"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Index</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="video-info-link"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Studio</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="video-info-link"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Zip</a
+                      >
+                    </li>
+                  </ul>
+                </li> -->
+
+                <li>
+                  <a
+                    class="video-info-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Subtitles</a
+                  >
+                </li>
+                <!-- <li>
+                  <a
+                    class="video-info-link"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Transcript</a
+                  >
+                </li> -->
+                <li class="lecture-list">
+                  Video
+                  <ul class="dropdown-reusable">
+                    <li>
+                      <a
+                        class="video-info-link"
+                        href="https://drive.google.com/file/d/1MXi7CLL6gQtFC1q-rSiSdCCs2FEFNGy1/view?usp=sharing"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >Google drive</a
+                      >
+                    </li>
+                    <!-- <li>
+                      <a
+                        class="video-info-link"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >MP4</a
+                      >
+                    </li> -->
+                    <li>
+                      <a
+                        class="video-info-link"
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >YouTube</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+
+            <li>
+              <a
+                class="video-info-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Problem Set 1</a
+              >
+            </li>
+          </ul>
         </div>
-    </body>
+      </main>
+    </div>
+  </body>
 </html>
