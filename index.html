@@ -34,26 +34,30 @@
           cursor: pointer;
         }
 
-        #heading-link:link,
-        #heading-link:visited {
+        .main-header {
+          border-bottom: 2px solid #f8f9fa;
+        }
+
+        #header-link:link,
+        #header-link:visited {
           text-decoration: none;
           color: #212529;
         }
 
-        span {
+        .header-span {
           color: #6c757d;
         }
 
-        #main-hr {
+        /* #main-hr {
           border-bottom: 0px;
           border-top: 2px solid #f8f9fa;
-        }
+        } */
 
-        .nav-icon {
+        .video-tools-icon {
           width: 12px;
           height: 12px;
         }
-        #nav-bar {
+        #video-tools {
           margin-top: 18px;
           background-color: #f8f9fa;
           display: flex;
@@ -61,51 +65,51 @@
           justify-content: space-between;
         }
 
-        #nav-bar ul {
+        #video-tools ul {
           list-style-type: none;
         }
 
-        .nav-link:link,
-        .nav-link:visited {
+        .video-tools-link:link,
+        .video-tools-link:visited {
           text-decoration: none;
-          font-size: 16px;
+          font-size: 1rem;
           color: #6c757d;
           padding: 12px;
           border: 2px solid transparent;
           border-radius: 8px;
         }
 
-        .nav-link:hover,
-        .nav-link:active {
+        .video-tools-link:hover,
+        .video-tools-link:active {
           color: #212529;
           border: 2px solid rgb(183, 233, 248);
         }
 
-        .nav-dropdown-link:link,
-        .nav-dropdown-link:visited {
+        .chapters-link:link,
+        .chapters-link:visited {
           text-decoration: none;
-          font-size: 16px;
+          font-size: 1rem;
           color: #6c757d;
         }
 
-        .nav-dropdown-link:hover,
-        .nav-dropdown-link:active {
+        .chapters-link:hover,
+        .chapters-link:active {
           color: #212529;
         }
 
-        .left-nav,
-        .right-nav {
+        .video-tools-left,
+        .video-tools-right {
           display: flex;
           gap: 32px;
           justify-content: center;
           align-items: center;
         }
 
-        .left-nav {
+        .video-tools-left {
           margin-left: -20px;
         }
 
-        .right-nav {
+        .video-tools-right {
           margin-right: 20px;
         }
 
@@ -117,7 +121,7 @@
         #video-info ul li {
           margin-top: 12px;
           list-style-type: square;
-          font-size: 18px;
+          font-size: 1.125rem;
         }
 
         .video-info-link {
@@ -134,14 +138,14 @@
           color: #a51c30;
         }
 
-        .dropdown-nav1-content,
-        .dropdown-nav2-content,
-        .dropdown3-content {
+        .dropdown-snacks,
+        .dropdown-chapters,
+        .dropdown-reusable {
           display: none;
         }
 
-        .dropdown-nav1:hover .dropdown-nav1-content,
-        .dropdown-nav2:hover .dropdown-nav2-content {
+        .snacks:hover .dropdown-snacks,
+        .chapters:hover .dropdown-chapters {
           position: absolute;
           display: flex;
           flex-direction: column;
@@ -149,20 +153,20 @@
           background-color: #ffffff;
         }
 
-        .dropdown-nav1-content li {
+        .dropdown-snacks li {
           border-bottom: 1px solid #f8f9fa;
         }
-        .dropdown-nav1:hover .dropdown-nav1-content {
+        .snacks:hover .dropdown-snacks {
           width: 70px;
           padding: 0;
-          font-size: 38px;
+          font-size: 2.3rem;
           text-align: center;
         }
 
-        .dropdown-nav2:hover .dropdown-nav2-content {
+        .chapters:hover .dropdown-chapters {
           width: 200px;
           padding: 20px;
-          font-size: 16px;
+          font-size: 1rem;
           text-align: left;
           right: 50px;
           left: auto;
@@ -170,7 +174,7 @@
           overflow-y: scroll;
         }
 
-        .dropdown3:hover .dropdown3-content {
+        .lecture-list:hover .dropdown-reusable {
           position: relative;
           display: block;
         }
@@ -189,119 +193,128 @@
       </aside>
 
       <main id="page-main">
-        <h1>
-          <a id="heading-link" href="#">Week 1 <span>Scratch</span></a>
-        </h1>
-        <hr id="main-hr" />
-
-        <nav id="nav-bar">
-          <ul class="left-nav">
-            <a
-              href="https://drive.google.com/file/d/1MXi7CLL6gQtFC1q-rSiSdCCs2FEFNGy1/view?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
+        <header class="main-header">
+          <h1>
+            <a id="header-link" href="#"
+              >Week 1 <span class="header-span">Scratch</span></a
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 1443.061 1249.993"
+          </h1>
+        </header>
+        <!-- <hr id="main-hr" /> -->
+        <section>
+          <div id="video-tools">
+            <ul class="video-tools-left">
+              <a
+                href="https://drive.google.com/file/d/1MXi7CLL6gQtFC1q-rSiSdCCs2FEFNGy1/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <path
-                  fill="#3777e3"
-                  d="M240.525 1249.993l240.492-416.664h962.044l-240.514 416.664z"
-                />
-                <path
-                  fill="#ffcf63"
-                  d="M962.055 833.329h481.006L962.055 0H481.017z"
-                />
-                <path
-                  fill="#11a861"
-                  d="M0 833.329l240.525 416.664 481.006-833.328L481.017 0z"
-                />
-              </svg>
-            </a>
-            <li><a class="nav-link" href="#">CS50</a></li>
-            <li><a class="nav-link" href="#">Scratch</a></li>
-          </ul>
-          <ul class="right-nav">
-            <li><a class="nav-link" href="#">Shortcuts</a></li>
-
-            <li class="dropdown-nav1">
-              <a class="nav-link" href="#"
-                >Snacks
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  class="nav-icon"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 1443.061 1249.993"
                 >
                   <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
+                    fill="#3777e3"
+                    d="M240.525 1249.993l240.492-416.664h962.044l-240.514 416.664z"
+                  />
+                  <path
+                    fill="#ffcf63"
+                    d="M962.055 833.329h481.006L962.055 0H481.017z"
+                  />
+                  <path
+                    fill="#11a861"
+                    d="M0 833.329l240.525 416.664 481.006-833.328L481.017 0z"
                   />
                 </svg>
               </a>
-              <ul class="dropdown-nav1-content">
-                <li>🍔</li>
-                <li>🍕</li>
-                <li>🍿</li>
-                <li>🍦</li>
-                <li>🧃</li>
-              </ul>
-            </li>
+              <li><a class="video-tools-link" href="#">CS50</a></li>
+              <li><a class="video-tools-link" href="#">Scratch</a></li>
+            </ul>
 
-            <li class="dropdown-nav2">
-              <a class="nav-link" href="#"
-                >Chapters
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="nav-icon"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </a>
-              <ul class="dropdown-nav2-content">
-                <li>
-                  <a class="nav-dropdown-link" href="#">Web definition</a>
-                </li>
-                <li><a class="nav-dropdown-link" href="#">Introduction</a></li>
-                <li><a class="nav-dropdown-link" href="#">Front end</a></li>
-                <li><a class="nav-dropdown-link" href="#">Introduction</a></li>
-                <li><a class="nav-dropdown-link" href="#">Introduction</a></li>
-                <li><a class="nav-dropdown-link" href="#">Introduction</a></li>
-                <li><a class="nav-dropdown-link" href="#">Introduction</a></li>
-                <li><a class="nav-dropdown-link" href="#">Introduction</a></li>
-                <li><a class="nav-dropdown-link" href="#">Introduction</a></li>
-                <li><a class="nav-dropdown-link" href="#">Introduction</a></li>
-                <li><a class="nav-dropdown-link" href="#">Conclusion</a></li>
-                <li><a class="nav-dropdown-link" href="#">Assignment</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-        <iframe
-          src="https://drive.google.com/file/d/1MXi7CLL6gQtFC1q-rSiSdCCs2FEFNGy1/preview"
-          width="1000"
-          height="500"
-          allow="autoplay"
-          allowfullscreen="1"
-          frameborder="0"
-        ></iframe>
+            <ul class="video-tools-right">
+              <li><a class="video-tools-link" href="#">Shortcuts</a></li>
+
+              <li class="snacks">
+                <a class="video-tools-link" href="#"
+                  >Snacks
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="video-tools-icon"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <ul class="dropdown-snacks">
+                  <li>🍔</li>
+                  <li>🍕</li>
+                  <li>🍿</li>
+                  <li>🍦</li>
+                  <li>🧃</li>
+                </ul>
+              </li>
+
+              <li class="chapters">
+                <a class="video-tools-link" href="#"
+                  >Chapters
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="video-tools-icon"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <ul class="dropdown-chapters">
+                  <li>
+                    <a class="chapters-link" href="#">Web definition</a>
+                  </li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Front end</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Introduction</a></li>
+                  <li><a class="chapters-link" href="#">Conclusion</a></li>
+                  <li><a class="chapters-link" href="#">Assignment</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <iframe
+              src="https://drive.google.com/file/d/1MXi7CLL6gQtFC1q-rSiSdCCs2FEFNGy1/preview"
+              width="1000"
+              height="500"
+              allow="autoplay"
+              allowfullscreen="1"
+              frameborder="0"
+            ></iframe>
+          </div>
+        </section>
 
         <div id="video-info">
           <ul>
-            <li>
+            <li class="lecture-list">
               Lecture
-              <ul>
-                <li>
+              <ul class="dropdown-reusable">
+                <!-- <li>
                   <a
                     class="video-info-link"
                     href="#"
@@ -309,7 +322,7 @@
                     rel="noopener noreferrer"
                     >Audio</a
                   >
-                </li>
+                </li> -->
                 <li>
                   <a
                     class="video-info-link"
@@ -320,9 +333,9 @@
                   >
                 </li>
 
-                <li class="dropdown3">
+                <li class="lecture-list">
                   Slides
-                  <ul class="dropdown3-content">
+                  <ul class="dropdown-reusable">
                     <li>
                       <a
                         class="video-info-link"
@@ -344,9 +357,9 @@
                   </ul>
                 </li>
 
-                <li class="dropdown3">
+                <!-- <li class="lecture-list">
                   Source Code
-                  <ul class="dropdown3-content">
+                  <ul class="dropdown-reusable">
                     <li>
                       <a
                         class="video-info-link"
@@ -375,7 +388,7 @@
                       >
                     </li>
                   </ul>
-                </li>
+                </li> -->
 
                 <li>
                   <a
@@ -386,7 +399,7 @@
                     >Subtitles</a
                   >
                 </li>
-                <li>
+                <!-- <li>
                   <a
                     class="video-info-link"
                     href="#"
@@ -394,20 +407,20 @@
                     rel="noopener noreferrer"
                     >Transcript</a
                   >
-                </li>
-                <li class="dropdown3">
+                </li> -->
+                <li class="lecture-list">
                   Video
-                  <ul class="dropdown3-content">
+                  <ul class="dropdown-reusable">
                     <li>
                       <a
                         class="video-info-link"
-                        href="#"
+                        href="https://drive.google.com/file/d/1MXi7CLL6gQtFC1q-rSiSdCCs2FEFNGy1/view?usp=sharing"
                         target="_blank"
                         rel="noopener noreferrer"
-                        >CS50 Video Player</a
+                        >Google drive</a
                       >
                     </li>
-                    <li>
+                    <!-- <li>
                       <a
                         class="video-info-link"
                         href="#"
@@ -415,7 +428,7 @@
                         rel="noopener noreferrer"
                         >MP4</a
                       >
-                    </li>
+                    </li> -->
                     <li>
                       <a
                         class="video-info-link"
